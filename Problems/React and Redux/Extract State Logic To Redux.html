@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>List Component</title>
+    <meta name="author" conent="Boston Rohan">
+    <meta name="description" content="Create List">
+    <div id="root">
+        <!--External Library References-->
+
+        <head>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+        </head>
+
+<body>
+    <script type="text/babel">
+class Redux extends React.Component {
+    constructor(props){
+    super(props);
+}
+render(){
+const initialState = [];
+const ADD = 'ADD';
+const action = {
+    type : ADD
+}
+function addMessage(msg){
+    return {
+        type : ADD,
+        message: msg
+    };
+}
+function messageReducer(state = initialState, action){
+    if(action.type === ADD){
+        return [...state, action.message]
+    }
+    else{
+        return state;
+    }
+}
+}
+}
+
+    ReactDOM.render(
+        <Redux />, document.getElementById('root')
+    );
+</script>
+    </div>
+</body>
+
+</html>
+
+<!--Reference for scripts and libraries-->
+<!https://medium.com/@to_pe/how-to-add-react-to-a-simple-html-file-a11511c0235f-->

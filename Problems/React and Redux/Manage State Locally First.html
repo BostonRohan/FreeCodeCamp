@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Manage State Locally First</title>
+    <meta name="author" content="Boston Rohan">
+    <meta name="description" content="Redux">
+    <div id="root">
+        <!--External Library References-->
+
+        <head>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+        </head>
+
+<body>
+    <script type="text/babel">
+        class DisplayMessages extends React.Component {
+            constructor(props){
+            super(props);
+            this.state = {
+            input: '',
+            messages: []
+            }
+        this.handleChange = this.handleChange.bind(this);
+        this.submitMessage = this.submitMessage.bind(this);
+            }
+        handleChange(event){
+            this.setState({
+                input: event.target.value
+            });
+        }
+        submitMessage(){
+        this.setState({
+            messages : [...this.state.messages, this.state.input],
+            input: ''
+        });
+
+        }
+            render() {
+                return (
+                <div>
+                    <h2>Type in a new message</h2>
+                    <input type = "text" value = {this.state.input} onChange = {this.handleChange} />
+                    <button onClick = {this.submitMessage}>Add message</button>
+                    <ul>{this.state.messages.map(input => <li key = {input}>{input}</li>)}</ul>
+                    </div>
+                );
+            }
+    }
+    ReactDOM.render(
+        <DisplayMessages />, document.getElementById('root')
+    );
+</script>
+    </div>
+</body>
+
+</html>
+
+<!--Reference for scripts and libraries-->
+<!https://medium.com/@to_pe/how-to-add-react-to-a-simple-html-file-a11511c0235f-->
