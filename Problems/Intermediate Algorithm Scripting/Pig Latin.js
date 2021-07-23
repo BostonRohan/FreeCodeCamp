@@ -1,13 +1,17 @@
 function translatePigLatin(str) {
-    var newStr = str;
-    var endOfWord = 'way';
-    const consonantsRegex = (/^([b-df-hj-np-tv-z])+/);
-    if(consonantsRegex.test(str)){
-    var matched = str.match(consonantsRegex).map(x => x);
-     newStr = str.replace(consonantsRegex, '');
-    endOfWord = matched[0] + 'ay';
+  //Establishing variables
+  var newStr = str,
+    endOfWord = "way";
+  const consonantsRegex = /^([b-df-hj-np-tv-z])+/;
+  //If the string has consonants.
+  if (consonantsRegex.test(str)) {
+    //Then match those consonants.
+    var matched = str.match(consonantsRegex).map((x) => x);
+    //Then replace those consonants at their current position.
+    newStr = str.replace(consonantsRegex, "");
+    endOfWord = matched[0] + "ay";
   }
+  //Add the consonants back to the end of the word
   return newStr + endOfWord;
 }
-  console.log(translatePigLatin("paragraphs"))
-  
+translatePigLatin("paragraphs");

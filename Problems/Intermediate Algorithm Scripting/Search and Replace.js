@@ -1,13 +1,17 @@
 function myReplace(str, before, after) {
-var upperCaseRegex = /^[A-Z]/;
-var lowerCaseRegex = /^[a-z]/;
-if(upperCaseRegex.test(before)){
+  const upperCaseRegex = /^[A-Z]/,
+    lowerCaseRegex = /^[a-z]/;
+  //If the first letter in the before word is lowercase, make the first letter in after uppercase.
+  if (upperCaseRegex.test(before)) {
     after = after.replace(after[0], after[0].toUpperCase());
-}
-else if(lowerCaseRegex.test(before)){
-    after = after.replace(after[0], after[0].toLowerCase());
-}
-    var newStr = str.replace(before, after);
-    return newStr;
   }
-  console.log(myReplace("I think we should look up there", "up", "Down"));
+  //If the first letter in before is lowercase, make the first letter in after lowercase.
+  //This keeps the capitilization.
+  else if (lowerCaseRegex.test(before)) {
+    after = after.replace(after[0], after[0].toLowerCase());
+  }
+  //Replace the words, and return the new string.
+  var newStr = str.replace(before, after);
+  return newStr;
+}
+myReplace("I think we should look up there", "up", "Down");
