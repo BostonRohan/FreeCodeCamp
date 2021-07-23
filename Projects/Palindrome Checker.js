@@ -4,20 +4,20 @@ function palindrome(str) {
   //Regex that matches all non-alphanumeric characters and spaces.
   const regex = /[^a-zA-Z\d]/g;
   //Remove the non-alphanumeric characters and spaces.
-  var newStr = str.replace(regex, '');
+  var newStr = str.replace(regex, "");
   //Reverse the string
-  const reverse = newStr.split('').reverse().join('');
+  const reverse = newStr.split("").reverse().join("");
   //Compare
-  if(newStr === reverse){
+  if (newStr === reverse) {
     return true;
   }
   return false;
-  }
-  console.log(palindrome("_eye"));
-  
-  //Psuedo Code
-  //Establish reverse variable
-  //Start by turning all letters in the string to lowercase
-  //Split string into an array, filter numerical values out.
-  //Use regex to delete non-alphanumeric characters and spaces
-  //Compare the str to the reverse variable, return true or false
+}
+palindrome("_eye");
+
+//Psuedo Code
+//Establish reverse variable
+//Start by turning all letters in the string to lowercase
+//Split string into an array, filter numerical values out.
+//Use regex to delete non-alphanumeric characters and spaces
+//Compare the str to the reverse variable, return true or false
