@@ -1,18 +1,41 @@
 #quote-box {
   text-align: center;
-  border: 1px solid black;
+  border: 1px solid rgba(222, 216, 216, 0.1);
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border-radius: 15px;
+  background-color: rgba(222, 216, 216, 0.1);
 }
 .twitter-icon {
-  height: 5%;
-  width: 5%;
   position: fixed;
+  width: 7%;
+  height: auto;
   padding-left: 35%;
 }
 #text {
   padding: 10px;
   margin: 10px;
+}
+#new-quote {
+  transition-duration: 0.4s;
+  background-color: black;
+  opacity: 0.7;
+  color: white;
+  text-align: center;
+  padding: 0.7em 1.7em;
+}
+#new-quote:hover {
+  opacity: 1;
+}
+@media (max-width: 1330px) {
+  #new-quote {
+    padding: 0%;
+  }
+}
+@media (max-width: 900px) {
+  .twitter-icon {
+    padding-left: 20%;
+  }
 }

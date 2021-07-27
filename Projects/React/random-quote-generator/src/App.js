@@ -17,8 +17,15 @@ function App() {
     <div id="quote-box">
       <h1 id="text">{quote}</h1>
       <h2 id="author">{author}</h2>
-      <button id="new-quote" onClick={() => setClick(click + 1)}></button>
-      <a id="tweet-quote" href="https://twitter.com/intent/tweet">
+      <button id="new-quote" onClick={() => setClick(click + 1)}>
+        <em>New quote</em>
+      </button>
+      <a
+        id="tweet-quote"
+        href={`https://twitter.com/intent/tweet?text="${quote}" -${author}`}
+        target="_blank"
+        rel="noreferrer"
+      >
         <img
           className="twitter-icon"
           src="https://logos-world.net/wp-content/uploads/2020/04/Twitter-Logo.png"
